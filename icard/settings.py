@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import datetime
 import os
-import dj_database_url
+#import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -93,10 +93,14 @@ WSGI_APPLICATION = 'icard.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='sqlite:///db.sqlite3',
-        conn_max_age=600
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'virtualmenu',
+        'USER' : 'virtualmenu_user',
+		'PASSWORD' : '7pmOLOnngDUE1tdHPBQtLcqhfhS3Mk4G',
+		'HOST' : 'dpg-cd8afs6n6mpnkghp44q0-a',
+        'PORT' : '5432'
+    }
 }
 
 
