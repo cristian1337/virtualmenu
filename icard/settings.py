@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',
     "corsheaders",
     'django_filters',
+    'cloudinary_storage',
     'users',
     'categories',
     'products',
@@ -142,18 +143,26 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_TMP = os.path.join(BASE_DIR, 'static')
-if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 os.makedirs(STATIC_TMP, exist_ok=True)
 os.makedirs(STATIC_ROOT, exist_ok=True)
-MEDIA_URL = 'uploads/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+#MEDIA_URL = 'uploads/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
+
+# # Linea agregada para subir imagenes a Cloudinary
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dbt7a9pmt',
+    'API_KEY': '331194736165659',
+    'API_SECRET': 'pSW1SaUDnF00m-MgkdzViJ-XDuc'
+}
 
 # USERS
 AUTH_USER_MODEL = 'users.User'
