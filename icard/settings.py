@@ -147,7 +147,7 @@ if not DEBUG:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 os.makedirs(STATIC_TMP, exist_ok=True)
 os.makedirs(STATIC_ROOT, exist_ok=True)
-MEDIA_URL = 'uploads/'
+MEDIA_URL = 'static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
 # Default primary key field type
