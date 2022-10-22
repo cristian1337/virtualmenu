@@ -1,4 +1,6 @@
 db (1).sqlite3
 db_windows.sqlite3
+render.yaml
+build.sh
 venv
 __pycache__
