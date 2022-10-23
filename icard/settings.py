@@ -95,9 +95,13 @@ WSGI_APPLICATION = 'icard.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+		'ENGINE ': 'django.db.backends.postgresql_psycopg2',
+		'NAME' : 'd7njhgpb6a6o5l',
+		'USER' : 'hyxsgywncsmdji',
+		'PASSWORD' : '3d206173eb5606823efa5bbe127f73f81062ba203fe6f3336eccc798bd6e4e95',
+		'HOST' : 'ec2-52-70-45-163.compute-1.amazonaws.com',
+		'PORT' : '5432'
+	}
 }
 
 
