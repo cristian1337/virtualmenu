@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import datetime
 import os
-import dj_database_url
+#import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -89,27 +89,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'icard.wsgi.application'
 
-#ON_HEROKU = os.environ.get('ON_HEROKU')
+
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-#if ON_HEROKU:
-DATABASE_URL = os.environ.get('DATABASE_URL')
-#else:
-    #DATABASE_URL = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
-
-DATABASES = {'default': dj_database_url.config(default=DATABASE_URL)}
-
-#DATABASES = {
-#    'default': {
-#		'ENGINE ': 'django.db.backends.postgresql_psycopg2',
-#		'NAME' : 'd7njhgpb6a6o5l',
-#		'USER' : 'hyxsgywncsmdji',
-#		'PASSWORD' : '3d206173eb5606823efa5bbe127f73f81062ba203fe6f3336eccc798bd6e4e95',
-#		'HOST' : 'ec2-52-70-45-163.compute-1.amazonaws.com',
-#		'PORT' : '5432',
-#	}
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 # Password validation
